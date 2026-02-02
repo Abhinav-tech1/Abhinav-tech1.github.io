@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for my baby girl❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background: #000;
+        }
+        
+        /* Page Container */
+        .page-container {
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* All pages common styles */
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            transition: opacity 1s ease, transform 1s ease;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .page.active {
+            opacity: 1;
+            pointer-events: all;
+            z-index: 20;
+        }
+        
+        /* Romantic Cursor */
+        .romantic-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ff6b9d' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") no-repeat center;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 10000;
+            mix-blend-mode: difference;
+        }
+        
+        /* Navigation Buttons */
+        .nav-btn {
+            position: fixed;
+            top: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #ffb6c1;
+            border: 1px solid rgba(255, 182, 193, 0.3);
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1em;
+            z-index: 100;
+            transition: all 0.5s ease;
+            box-shadow: 0 5px 25px rgba(255, 107, 157, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Dancing Script', cursive;
+            letter-spacing: 1px;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255, 107, 157, 0.8);
+            color: white;
+            transform: translateX(-8px);
+            box-shadow: 0 8px 30px rgba(255, 107, 157, 0.4);
+        }
+        
+        .back-btn {
+            left: 30px;
+        }
+        
+        .next-btn {
+            right: 30px;
+        }
+        
+        .next-btn:hover {
+            transform: translateX(8px);
+        }
+        
+        /* Page 1: Landing Page */
+        #landing-page {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+                        url('https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .love-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 6em;
+            color: #ffb6c1;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 0 0 30px rgba(255, 107, 157, 0.5),
+                         0 0 60px rgba(255, 107, 157, 0.3),
+                         0 0 90px rgba(255, 107, 157, 0.2);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 107, 157, 0.5),
+                             0 0 40px rgba(255, 107, 157, 0.3),
+                             0 0 60px rgba(255, 107, 157, 0.2);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 107, 157, 0.7),
+                             0 0 60px rgba(255, 107, 157, 0.5),
+                             0 0 90px rgba(255, 107, 157, 0.3),
+                             0 0 120px rgba(255, 107, 157, 0.1);
+            }
+        }
+        
+        .romantic-subtitle {
+            font-size: 1.8em;
+            color: #fff;
+            font-style: italic;
+            margin-bottom: 50px;
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.4;
+            font-family: 'Playfair Display', serif;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+        
+        .enter-btn {
+            background: linear-gradient(45deg, #ff6b9d, #ff1493);
+            color: white;
+            border: none;
+            padding: 25px 60px;
+            font-size: 1.8em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 40px;
+            transition: all 0.5s ease;
+            box-shadow: 0 15px 35px rgba(255, 20, 147, 0.4);
+            font-family: 'Dancing Script', cursive;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 1s;
+            transform: translateY(20px);
+        }
+        
+        .enter-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 20, 147, 0.6);
+            letter-spacing: 4px;
+        }
+        
+        .enter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .enter-btn:hover::before {
+            left: 100%;
+        }
+        
+        .heart-rain {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .falling-heart {
+            position: absolute;
+            color: #ff6b9d;
+            font-size: 24px;
+            animation: fall linear infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Page 2: Love Letter Page with Slider */
+        #love-letter-page {
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .letter-slider-container {
+            max-width: 900px;
+            width: 90%;
+            margin: 40px auto;
+            position: relative;
+        }
+        
+        .letter-slider {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 60px;
+            border: 1px solid rgba(255, 182, 193, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+        }
+        
+        .letter-slider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b9d, #ff1493, #ff6b9d);
+            animation: shimmer 3s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -800px 0; }
+            100% { background-position: 800px 0; }
+        }
+        
+        .letter-slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .letter-slide.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .letter-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .letter-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4em;
+            color: #ffb6c1;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .letter-date {
+            color: #ff6b9d;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+        
+        .letter-content {
+            color: #fff;
+            font-size: 1.3em;
+            line-height: 1.8;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .letter-paragraph {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 40px;
+            text-align: left;
+        }
+        
+        .letter-paragraph::before {
+            content: '❤';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #ff6b9d;
+            font-size: 1.5em;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        .letter-signature {
+            text-align: right;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 182, 193, 0.2);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            color: #ffb6c1;
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .slider-btn {
+            background: rgba(255, 107, 157, 0.2);
+            border: 1px solid rgba(255, 107, 157, 0.3);
+            color: #ffb6c1;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            min-width: 150px;
+            text-align: center;
+        }
+        
+        .slider-btn:hover {
+            background: rgba(255, 107, 157, 0.6);
+            transform: scale(1.05);
+        }
+        
+        .slider-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
+        .slider-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 107, 157, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-dot.active {
+            background: #ff6b9d;
+            transform: scale(1.2);
+        }
+        
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-heart {
+            position: absolute;
+            font-size: 30px;
+            color: #ff6b9d;
+            opacity: 0.5;
+            animation: floatAround 20s linear infinite;
+        }
+        
+        @keyframes floatAround {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(100px, 100px) rotate(90deg);
+            }
+            50% {
+                transform: translate(0, 200px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-100px, 100px) rotate(270deg);
+            }
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        /* Page 3: Memory Gallery */
+        #memory-gallery-page {
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+            padding: 40px 20px;
+        }
+        
+        .gallery-container {
+            max-width: 1400px;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .gallery-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5em;
+            color: #ffb6c1;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+        }
+        
+        .gallery-subtitle {
+            color: #fff;
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 60px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+        
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .memory-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 182, 193, 0.2);
+            transition: all 0.5s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .memory-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(255, 107, 157, 0.3);
+            border-color: rgba(255, 107, 157, 0.5);
+        }
+        
+        .memory-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .memory-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .memory-card:hover .memory-image img {
+            transform: scale(1.1);
+        }
+        
+        .memory-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .memory-card:hover .memory-overlay {
+            opacity: 1;
+        }
+        
+        .memory-info {
+            padding: 25px;
+        }
+        
+        .memory-quote {
+            font-size: 1.4em;
+            color: #ffb6c1;
+            margin-bottom: 15px;
+            font-style: italic;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            min-height: 80px;
+        }
+        
+        .memory-date {
+            color: #ff6b9d;
+            font-size: 1.1em;
+            text-align: center;
+            font-weight: bold;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 182, 193, 0.2);
+        }
+        
+        /* Image Popup Modal */
+        .image-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .image-popup.active {
+            display: flex;
+        }
+        
+        .popup-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            animation: zoomIn 0.3s ease;
+        }
+        
+        .popup-content img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .popup-info {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            padding: 20px;
+            max-width: 600px;
+        }
+        
+        .popup-quote {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            color: #ffb6c1;
+            margin-bottom: 10px;
+        }
+        
+        .popup-date {
+            font-size: 1.2em;
+            color: #ff6b9d;
+            margin-bottom: 15px;
+        }
+        
+        .popup-description {
+            font-size: 1.1em;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .close-popup {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 107, 157, 0.3);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 2em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10001;
+        }
+        
+        .close-popup:hover {
+            background: rgba(255, 107, 157, 0.8);
+            transform: rotate(90deg);
+        }
+        
+        .popup-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 107, 157, 0.3);
+            border: none;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 2em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .popup-nav:hover {
+            background: rgba(255, 107, 157, 0.8);
+        }
+        
+        .popup-prev {
+            left: 20px;
+        }
+        
+        .popup-next {
+            right: 20px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        .page-btn {
+            background: rgba(255, 107, 157, 0.2);
+            border: 1px solid rgba(255, 107, 157, 0.3);
+            color: #ffb6c1;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5em;
+            transition: all 0.3s ease;
+        }
+        
+        .page-btn:hover:not(:disabled) {
+            background: rgba(255, 107, 157, 0.6);
+            transform: scale(1.1);
+        }
+        
+        .page-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        
+        .page-indicator {
+            color: #fff;
+            font-size: 1.2em;
+            padding: 0 20px;
+        }
+        
+        /* Love Notes Floating */
+        .love-note {
+            position: fixed;
+            background: linear-gradient(135deg, #ff6b9d, #ff1493);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0;
+            animation: floatNote 8s ease-in-out forwards;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transform-origin: center;
+        }
+        
+        @keyframes floatNote {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) scale(0);
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(80vh) scale(1);
+            }
+            90% {
+                opacity: 1;
+                transform: translateY(20vh) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(0) scale(0.5);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .love-title { font-size: 3.5em; }
+            .romantic-subtitle { font-size: 1.3em; }
+            .enter-btn { padding: 20px 40px; font-size: 1.5em; }
+            .letter-slider { padding: 30px 20px; }
+            .letter-title { font-size: 2.5em; }
+            .letter-content { font-size: 1.1em; }
+            .nav-btn { top: 15px; padding: 10px 20px; font-size: 1em; }
+            .gallery-title { font-size: 3em; }
+            .memory-grid { grid-template-columns: 1fr; }
+            .slider-btn { min-width: 120px; font-size: 1em; padding: 10px 15px; }
+            .popup-nav { width: 50px; height: 50px; font-size: 1.5em; }
+            .popup-quote { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Romantic Cursor -->
+    <div class="romantic-cursor" id="romantic-cursor"></div>
+    
+    <!-- Image Popup Modal -->
+    <div class="image-popup" id="image-popup">
+        <button class="close-popup" id="close-popup">×</button>
+        <button class="popup-nav popup-prev" id="popup-prev">←</button>
+        <div class="popup-content">
+            <img id="popup-image" src="" alt="">
+            <div class="popup-info">
+                <div class="popup-quote" id="popup-quote"></div>
+                <div class="popup-date" id="popup-date"></div>
+                <div class="popup-description" id="popup-description"></div>
+            </div>
+        </div>
+        <button class="popup-nav popup-next" id="popup-next">→</button>
+    </div>
+    
+    <div class="page-container">
+        <!-- Page 1: Landing Page -->
+        <div class="page active" id="landing-page">
+            <div class="heart-rain" id="heart-rain"></div>
+            
+            <h1 class="love-title">Happy Anniversary for my PATHUU💕</h1>
+            
+            <div class="romantic-subtitle">
+                ONLY THE BEGINNING💕
+            </div>
+            
+            <!-- FIXED: Added id="enter-btn" to the button -->
+            <button class="enter-btn" id="enter-btn">
+                Open My Heart ❤️
+            </button>
+        </div>
+        
+        <!-- Page 2: Love Letter Page with Slider -->
+        <div class="page" id="love-letter-page">
+            <button class="nav-btn back-btn" id="back-to-landing">
+                ← Our Beginning
+            </button>
+            
+            <button class="nav-btn next-btn" id="view-memories-btn">
+                Our Memories →
+            </button>
+            
+            <div class="floating-hearts" id="floating-hearts"></div>
+            
+            <div class="letter-slider-container">
+                <div class="letter-slider">
+                    <!-- Slide 1 -->
+                    <div class="letter-slide active">
+                        <div class="letter-header">
+                            <h2 class="letter-title">To My Beloved</h2>
+                            <div class="letter-date">PATHUUU💕</div>
+                        </div>
+                        
+                        <div class="letter-content">
+                            <p class="letter-paragraph">
+                               First of all this is not fully AI😅.Baby this is our first Anniversary so i thought
+                               may be we can store it virtually 😁.This something that i am writing from my own heart.
+                               i hope you like this babyy😘.  
+                            </p>
+                            
+                            <p class="letter-paragraph">
+                               Pathuu before you came into my life I was fully broken it was you who has given my life 
+                               light,happiness everthing babyy🥰.I remember the first time we spoken it was during sumi miss
+                               Exam 😅.funny right who would have thought that day we will be together for for our rest of our life 
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="letter-slide">
+                        <div class="letter-content">
+                            <p class="letter-paragraph">
+                               I always thing about how we gotten together if any one thing have not been happen we would
+                               never have been like this. we are bound to be meet that why the God has bring us together😘🤗
+                               and the God will keep us together until the End 🤗
+                            </p>
+                            
+                            <p class="letter-paragraph">
+                                I always remember the we told each other that we love .well i told you first😁you taken 2 days 
+                                then you also told me you love me ❤️🥰 on this date. it was the first happiest day of my life then my life has 
+                                completely changed all these new feeling burst inside me.you have truly bring colour in my life babyy.that why i 
+                                always try my maximum to keep you happy babyy🤗I will irritate you that's another matter😁
+                                hehehehehehehehehehe😁😉
+                                
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="letter-slide">
+                        <div class="letter-content">
+                            <p class="letter-paragraph">
+                                 I don't know if i have told everthing correct or not. sorry for advance😅.babyy thank you for coming
+                                 into my life.thankyou for being their with me when i needed you the most. I know we should not say thank you 😅still 
+                                 these are coming from my heart and i told sorry advance😉.this is only the beginning babyy.our story will be written
+                                 with beautiful memories together. this is just started babyy🥰💕.soo this is my anniversary gift 😅 i hope you will 
+                                 love this .I LOVEEEE YOUUU PATHUUU💕😘 
+                                  BY YOUR MAN😁
+                                                                
+                            </p>
+                            
+                            <div class="letter-signature">
+                                Forever Yours,<br>
+                                With All That I Am ❤️
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prev-letter-slide">← Previous</button>
+                    <button class="slider-btn" id="next-letter-slide">Next →</button>
+                </div>
+                
+                <div class="slider-indicator" id="slider-indicator">
+                    <!-- Dots will be added by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page 3: Memory Gallery Page -->
+        <div class="page" id="memory-gallery-page">
+            <button class="nav-btn back-btn" id="back-to-letter">
+                ← Our Love Story
+            </button>
+            
+            <div class="gallery-container">
+                <h2 class="gallery-title">Moments of Forever</h2>
+                <div class="gallery-subtitle">
+                    Each memory is a treasure, each moment a lifetime of love
+                </div>
+                
+                <div class="memory-grid" id="memory-grid">
+                    <!-- Memory cards will be loaded here -->
+                </div>
+                
+                <div class="pagination">
+                    <button class="page-btn" id="prev-page" disabled>←</button>
+                    <div class="page-indicator">
+                        <span id="current-page">1</span> / <span id="total-pages">3</span>
+                    </div>
+                    <button class="page-btn" id="next-page">→</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements - using console.log to debug
+        console.log('Starting JavaScript initialization...');
+        
+        const pages = {
+            landing: document.getElementById('landing-page'),
+            letter: document.getElementById('love-letter-page'),
+            gallery: document.getElementById('memory-gallery-page')
+        };
+        
+        console.log('Pages found:', {
+            landing: !!pages.landing,
+            letter: !!pages.letter,
+            gallery: !!pages.gallery
+        });
+        
+        const buttons = {
+            enter: document.getElementById('enter-btn'),
+            backToLanding: document.getElementById('back-to-landing'),
+            viewMemories: document.getElementById('view-memories-btn'),
+            backToLetter: document.getElementById('back-to-letter'),
+            prevPage: document.getElementById('prev-page'),
+            nextPage: document.getElementById('next-page'),
+            prevLetterSlide: document.getElementById('prev-letter-slide'),
+            nextLetterSlide: document.getElementById('next-letter-slide')
+        };
+        
+        console.log('Buttons found:', {
+            enter: !!buttons.enter,
+            backToLanding: !!buttons.backToLanding,
+            viewMemories: !!buttons.viewMemories,
+            backToLetter: !!buttons.backToLetter
+        });
+        
+        const containers = {
+            heartRain: document.getElementById('heart-rain'),
+            floatingHearts: document.getElementById('floating-hearts'),
+            memoryGrid: document.getElementById('memory-grid'),
+            sliderIndicator: document.getElementById('slider-indicator')
+        };
+        
+        const popup = {
+            container: document.getElementById('image-popup'),
+            image: document.getElementById('popup-image'),
+            quote: document.getElementById('popup-quote'),
+            date: document.getElementById('popup-date'),
+            description: document.getElementById('popup-description'),
+            close: document.getElementById('close-popup'),
+            prev: document.getElementById('popup-prev'),
+            next: document.getElementById('popup-next')
+        };
+        
+        // Romantic cursor
+        const cursor = document.getElementById('romantic-cursor');
+        
+        // Letter slider variables
+        let currentLetterSlide = 0;
+        const letterSlides = document.querySelectorAll('.letter-slide');
+        let totalLetterSlides = letterSlides.length;
+        
+        // Memory Data - ALL QUOTES FIXED
+        const memories = [
+            {
+                id: 1,
+                image: 'https://res.cloudinary.com/dn2qponbv/image/upload/v1769967336/WhatsApp_Image_2026-02-01_at_9.10.03_PM_w6jczc.jpg',
+                quote: 'the first picture we taken only US',
+                date: 'Our Beginning',
+                description: 'That magical moment when two hearts became one.'
+            },
+            {
+                id: 2,
+                image: 'https://res.cloudinary.com/dn2qponbv/image/upload/v1769967915/WhatsApp_Image_2026-02-01_at_9.10.03_PM_2_qisi6c.jpg',
+                quote: 'Every minute with you feels calm',
+                date: 'Happiness',
+                description: 'Starting each day wrapped in your love.'
+            },
+            {
+                id: 3,
+                image: 'https://res.cloudinary.com/dn2qponbv/image/upload/v1769971618/WhatsApp_Image_2026-02-02_at_12.16.14_AM_kzwlpc.jpg',
+                quote: 'feels calm in you arm😘',
+                date: 'My home',
+                description: 'When the world fades and only we exist.'
+            },
+            {
+                id: 4,
+                image: 'https://res.cloudinary.com/dn2qponbv/image/upload/v1769967919/WhatsApp_Image_2026-02-01_at_9.10.02_PM_lzfknp.jpg',
+                quote: 'with you all feel right.',
+                date: 'first date',
+                description: 'Every moment with you is pure magic.'
+            },
+            {
+                id: 5,
+                image: 'https://res.cloudinary.com/dn2qponbv/image/upload/v1769971618/WhatsApp_Image_2026-02-02_at_12.16.14_AM_1_g1ohvc.jpg',
+                quote: 'Finding our children face in ours childhood faces',
+                date: 'Children version😉',
+                description: 'Finding our children face in ours childhood faces'
+            },
+            {
+                id: 6,
+                image: 'https://res.cloudinary.com/dn2qponbv/image/upload/v1769967920/WhatsApp_Image_2026-02-01_at_9.10.01_PM_2_ahnm3p.jpg',
+                quote: 'found bestfriend,partner in same person',
+                date: 'Our Moments',
+                description: 'The peace that comes from being truly loved.'
+            },
+            {
+                id: 7,
+                image: 'https://res.cloudinary.com/dn2qponbv/image/upload/v1769967922/WhatsApp_Image_2026-02-01_at_9.10.01_PM_1_gueifi.jpg',
+                quote: 'Every adventure is sweeter with you.',
+                date: 'Travel Memories',
+                description: 'Exploring the world, discovering each other.'
+            },
+            {
+                id: 8,
+                image: 'https://res.cloudinary.com/dn2qponbv/image/upload/v1769970724/together_s4g2fx.jpg',
+                quote: 'Your eyes has painted my world in colors.',
+                date: 'together',
+                description: 'Celebrating us, celebrating love.'
+            },
+            {
+                id: 9,
+                image: 'https://res.cloudinary.com/dn2qponbv/image/upload/v1769967914/WhatsApp_Image_2026-02-01_at_9.10.04_PM_nlqbvn.jpg',
+                quote: 'Growing old with you is my dream.',
+                date: 'Future Dreams',
+                description: 'Every tomorrow with you is worth waiting for.'
+            }
+        ];
+        
+        console.log('Memories loaded:', memories.length);
+        
+        // Gallery pagination
+        let currentPage = 1;
+        const itemsPerPage = 6;
+        let totalPages = Math.ceil(memories.length / itemsPerPage);
+        
+        // Image popup variables
+        let currentPopupIndex = 0;
+        let currentPageMemories = [];
+        
+        // Create heart rain
+        function createHeartRain() {
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'falling-heart';
+                heart.innerHTML = '❤';
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDuration = `${Math.random() * 3 + 5}s`;
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                heart.style.fontSize = `${Math.random() * 20 + 20}px`;
+                heart.style.opacity = `${Math.random() * 0.3 + 0.3}`;
+                containers.heartRain.appendChild(heart);
+            }
+        }
+        
+        // Create floating hearts
+        function createFloatingHearts() {
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerHTML = '❤';
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.top = `${Math.random() * 100}%`;
+                heart.style.fontSize = `${Math.random() * 40 + 30}px`;
+                heart.style.animationDelay = `${Math.random() * 20}s`;
+                heart.style.opacity = `${Math.random() * 0.2 + 0.1}`;
+                containers.floatingHearts.appendChild(heart);
+            }
+        }
+        
+        // Create letter slider dots
+        function createLetterSliderDots() {
+            containers.sliderIndicator.innerHTML = '';
+            for (let i = 0; i < totalLetterSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'slider-dot';
+                if (i === currentLetterSlide) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    currentLetterSlide = i;
+                    updateLetterSlider();
+                });
+                containers.sliderIndicator.appendChild(dot);
+            }
+        }
+        
+        // Update letter slider
+        function updateLetterSlider() {
+            letterSlides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentLetterSlide);
+            });
+            
+            // Update dots
+            const dots = document.querySelectorAll('.slider-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentLetterSlide);
+            });
+            
+            // Update button states
+            if (buttons.prevLetterSlide) {
+                buttons.prevLetterSlide.disabled = currentLetterSlide === 0;
+            }
+            if (buttons.nextLetterSlide) {
+                buttons.nextLetterSlide.disabled = currentLetterSlide === totalLetterSlides - 1;
+            }
+        }
+        
+        // Next letter slide
+        function nextLetterSlide() {
+            if (currentLetterSlide < totalLetterSlides - 1) {
+                currentLetterSlide++;
+                updateLetterSlider();
+            }
+        }
+        
+        // Previous letter slide
+        function prevLetterSlide() {
+            if (currentLetterSlide > 0) {
+                currentLetterSlide--;
+                updateLetterSlider();
+            }
+        }
+        
+        // Romantic cursor movement
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+            
+            // Create trailing hearts
+            if (Math.random() > 0.7) {
+                createTrailingHeart(e.clientX, e.clientY);
+            }
+        });
+        
+        function createTrailingHeart(x, y) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤';
+            heart.style.position = 'fixed';
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+            heart.style.fontSize = '15px';
+            heart.style.color = '#ff6b9d';
+            heart.style.pointerEvents = 'none';
+            heart.style.zIndex = '9999';
+            heart.style.opacity = '0.8';
+            heart.style.transform = 'translate(-50%, -50%) scale(0)';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.style.transition = 'all 0.8s ease';
+                heart.style.opacity = '0';
+                heart.style.transform = 'translate(-50%, -150%) scale(1)';
+            }, 10);
+            
+            setTimeout(() => {
+                document.body.removeChild(heart);
+            }, 1000);
+        }
+        
+        // Create floating love notes
+        function createLoveNote() {
+            const notes = [
+                "I love you more than yesterday",
+                "You are my everything",
+                "Forever yours",
+                "My heart beats for you",
+                "You complete me",
+                "Love of my life",
+                "Eternally yours",
+                "You are my dream come true"
+            ];
+            
+            const note = document.createElement('div');
+            note.className = 'love-note';
+            note.textContent = notes[Math.floor(Math.random() * notes.length)];
+            note.style.left = `${Math.random() * 80 + 10}%`;
+            note.style.top = `${Math.random() * 80 + 10}%`;
+            note.style.animationDuration = `${Math.random() * 3 + 5}s`;
+            
+            document.body.appendChild(note);
+            
+            setTimeout(() => {
+                document.body.removeChild(note);
+            }, 8000);
+            
+            // Schedule next note
+            setTimeout(createLoveNote, Math.random() * 8000 + 4000);
+        }
+        
+        // Switch between pages - SIMPLIFIED VERSION
+        function showPage(pageToShow) {
+            console.log('showPage called with:', pageToShow.id);
+            
+            // Hide all pages
+            Object.values(pages).forEach(page => {
+                if (page) {
+                    page.classList.remove('active');
+                }
+            });
+            
+            // Show requested page
+            if (pageToShow) {
+                pageToShow.classList.add('active');
+                console.log('Showing page:', pageToShow.id);
+            }
+            
+            // Start love notes on love letter page
+            if (pageToShow === pages.letter) {
+                setTimeout(createLoveNote, 1000);
+            }
+        }
+        
+        // Render memory gallery
+        function renderGalleryPage(page) {
+            currentPage = page;
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            currentPageMemories = memories.slice(startIndex, endIndex);
+            
+            if (containers.memoryGrid) {
+                containers.memoryGrid.innerHTML = '';
+            }
+            
+            currentPageMemories.forEach((memory, index) => {
+                const memoryCard = document.createElement('div');
+                memoryCard.className = 'memory-card';
+                memoryCard.innerHTML = `
+                    <div class="memory-image">
+                        <img src="${memory.image}" alt="${memory.date}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=800&q=80'">
+                        <div class="memory-overlay">
+                            <div style="color: white; text-align: center; padding: 20px;">
+                                ${memory.description}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="memory-info">
+                        <div class="memory-quote">"${memory.quote}"</div>
+                        <div class="memory-date">${memory.date}</div>
+                    </div>
+                `;
+                
+                // Add click event for popup
+                memoryCard.addEventListener('click', () => {
+                    currentPopupIndex = index;
+                    showImagePopup(memory);
+                });
+                
+                if (containers.memoryGrid) {
+                    containers.memoryGrid.appendChild(memoryCard);
+                }
+            });
+            
+            // Update page indicators
+            const currentPageEl = document.getElementById('current-page');
+            const totalPagesEl = document.getElementById('total-pages');
+            if (currentPageEl) currentPageEl.textContent = currentPage;
+            if (totalPagesEl) totalPagesEl.textContent = totalPages;
+            
+            // Update button states
+            if (buttons.prevPage) buttons.prevPage.disabled = currentPage === 1;
+            if (buttons.nextPage) buttons.nextPage.disabled = currentPage === totalPages;
+        }
+        
+        // Show image popup
+        function showImagePopup(memory) {
+            if (popup.image) popup.image.src = memory.image;
+            if (popup.quote) popup.quote.textContent = `"${memory.quote}"`;
+            if (popup.date) popup.date.textContent = memory.date;
+            if (popup.description) popup.description.textContent = memory.description;
+            if (popup.container) popup.container.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Hide image popup
+        function hideImagePopup() {
+            if (popup.container) popup.container.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Navigate popup images
+        function showNextPopupImage() {
+            currentPopupIndex = (currentPopupIndex + 1) % currentPageMemories.length;
+            const memory = currentPageMemories[currentPopupIndex];
+            showImagePopup(memory);
+        }
+        
+        function showPrevPopupImage() {
+            currentPopupIndex = (currentPopupIndex - 1 + currentPageMemories.length) % currentPageMemories.length;
+            const memory = currentPageMemories[currentPopupIndex];
+            showImagePopup(memory);
+        }
+        
+        // Create romantic click effects
+        function createClickEffect(x, y) {
+            const hearts = ['❤', '💖', '💕', '💗', '💓', '💞', '💘', '💝'];
+            
+            for (let i = 0; i < 5; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.position = 'fixed';
+                heart.style.left = `${x}px`;
+                heart.style.top = `${y}px`;
+                heart.style.fontSize = `${Math.random() * 20 + 20}px`;
+                heart.style.color = '#ff6b9d';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '9999';
+                heart.style.opacity = '0.8';
+                heart.style.transform = 'translate(-50%, -50%) scale(0)';
+                
+                document.body.appendChild(heart);
+                
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 100 + 50;
+                
+                setTimeout(() => {
+                    heart.style.transition = 'all 0.8s ease';
+                    heart.style.opacity = '0';
+                    heart.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) scale(1)`;
+                }, 10);
+                
+                setTimeout(() => {
+                    document.body.removeChild(heart);
+                }, 1000);
+            }
+        }
+        
+        // Event Listeners - ADDED DEBUGGING
+        console.log('Setting up event listeners...');
+        
+        if (buttons.enter) {
+            console.log('Setting up enter button listener');
+            buttons.enter.addEventListener('click', (e) => {
+                console.log('Enter button clicked!');
+                createClickEffect(e.clientX, e.clientY);
+                setTimeout(() => {
+                    console.log('Navigating to letter page');
+                    showPage(pages.letter);
+                }, 300);
+            });
+        } else {
+            console.error('Enter button not found!');
+        }
+        
+        if (buttons.backToLanding) {
+            buttons.backToLanding.addEventListener('click', (e) => {
+                createClickEffect(e.clientX, e.clientY);
+                setTimeout(() => showPage(pages.landing), 300);
+            });
+        }
+        
+        if (buttons.viewMemories) {
+            buttons.viewMemories.addEventListener('click', (e) => {
+                createClickEffect(e.clientX, e.clientY);
+                renderGalleryPage(1);
+                setTimeout(() => showPage(pages.gallery), 300);
+            });
+        }
+        
+        if (buttons.backToLetter) {
+            buttons.backToLetter.addEventListener('click', (e) => {
+                createClickEffect(e.clientX, e.clientY);
+                setTimeout(() => showPage(pages.letter), 300);
+            });
+        }
+        
+        if (buttons.prevPage) {
+            buttons.prevPage.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    renderGalleryPage(currentPage - 1);
+                }
+            });
+        }
+        
+        if (buttons.nextPage) {
+            buttons.nextPage.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    renderGalleryPage(currentPage + 1);
+                }
+            });
+        }
+        
+        // Letter slider navigation
+        if (buttons.prevLetterSlide) {
+            buttons.prevLetterSlide.addEventListener('click', prevLetterSlide);
+        }
+        
+        if (buttons.nextLetterSlide) {
+            buttons.nextLetterSlide.addEventListener('click', nextLetterSlide);
+        }
+        
+        // Popup navigation
+        if (popup.close) {
+            popup.close.addEventListener('click', hideImagePopup);
+        }
+        
+        if (popup.next) {
+            popup.next.addEventListener('click', showNextPopupImage);
+        }
+        
+        if (popup.prev) {
+            popup.prev.addEventListener('click', showPrevPopupImage);
+        }
+        
+        // Close popup on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.container && popup.container.classList.contains('active')) {
+                hideImagePopup();
+            }
+        });
+        
+        // Close popup on background click
+        if (popup.container) {
+            popup.container.addEventListener('click', (e) => {
+                if (e.target === popup.container) {
+                    hideImagePopup();
+                }
+            });
+        }
+        
+        // Add click effects to whole document
+        document.addEventListener('click', (e) => {
+            if (e.target.tagName !== 'BUTTON' && !e.target.closest('.memory-card')) {
+                createClickEffect(e.clientX, e.clientY);
+            }
+        });
+        
+        // Initialize the page
+        function init() {
+            console.log('Initializing website...');
+            
+            try {
+                createHeartRain();
+                createFloatingHearts();
+                createLetterSliderDots();
+                updateLetterSlider();
+                renderGalleryPage(1);
+                totalPages = Math.ceil(memories.length / itemsPerPage);
+                
+                // Start love notes on landing page
+                setTimeout(createLoveNote, 2000);
+                
+                console.log('Website initialized successfully!');
+                console.log('Memory images loaded:', memories.length);
+            } catch (error) {
+                console.error('Error during initialization:', error);
+            }
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
